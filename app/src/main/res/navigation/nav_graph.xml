@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/signUpFragment">
+
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.example.testappsolution.views.SignUpFragment"
+        android:label="fragment_signup"
+        tools:layout="@layout/fragment_signup" >
+        <action
+            android:id="@+id/action_signUpFragment_to_signInFragment"
+            app:destination="@id/signInFragment" />
+        <!--<action
+            android:id="@+id/action_signInFragment_to_mainPage"
+            app:destination="@id/mainPage" />-->
+    </fragment>
+    <fragment
+        android:id="@+id/signInFragment"
+        android:name="com.example.testappsolution.views.SignInFragment"
+        android:label="fragment_signin"
+        tools:layout="@layout/fragment_signin" >
+        <action
+            android:id="@+id/action_signInFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
+        <action
+            android:id="@+id/action_signInFragment_to_mainPage"
+            app:destination="@id/mainPage" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainPage"
+        android:name="com.example.testappsolution.views.MainPage"
+        android:label="fragment_main_page"
+        tools:layout="@layout/fragment_main_page">
+        <action
+            android:id="@+id/action_mainPage_to_signInFragment"
+            app:destination="@id/signInFragment" />
+    </fragment>
+</navigation>
